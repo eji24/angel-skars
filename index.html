@@ -117,6 +117,13 @@
   footer .socials a:hover{color:var(--blood-bright);opacity:1;}
   footer .fine{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;opacity:.4;margin-top:12px;}
 
+  /* LOGO MARKS */
+  nav .brand{display:flex;align-items:center;height:34px;text-decoration:none;}
+  nav .brand img{height:30px;width:auto;display:block;filter:drop-shadow(0 2px 7px rgba(0,0,0,.7));}
+  .banner-divider{background:var(--black);text-align:center;padding:34px 20px 4px;}
+  .banner-divider img{width:min(370px,74vw);height:auto;filter:drop-shadow(0 8px 26px rgba(0,0,0,.75));}
+  footer .fmark-img{height:104px;width:auto;margin:0 auto 4px;display:block;filter:drop-shadow(0 5px 20px rgba(0,0,0,.65));}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.on{opacity:1;transform:none;}
 </style>
@@ -124,7 +131,7 @@
 <body>
 
 <nav>
-  <div class="logo">ANGEL <span>SKARS</span></div>
+  <a href="#" class="brand" aria-label="Angel Skars — home"><img src="images/logo-skull.png" alt="Angel Skars"></a>
   <div class="links">
     <a href="#story">Story</a><a href="#shows">Shows</a><a href="#gallery">Gallery</a>
     <a href="#team">Band</a><a href="#listen">Listen</a><a href="#book">Book</a>
@@ -170,19 +177,32 @@
   </div>
 </section>
 
+<!-- BANNER DIVIDER -->
+<div class="banner-divider"><img src="images/banner-fire.png" alt="Angel Skars hand-painted banner"></div>
+
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="wrap">
     <div class="reveal"><div class="eyebrow">Flash on, lights low</div><h2 class="sec-title">Gallery</h2></div>
     <div class="grid reveal">
-      <figure class="g-tall"><img src="images/street-scaffold.jpg" alt="Angel Skars under scaffolding at night" loading="lazy"></figure>
-      <figure class="g-wide"><img src="images/bed-guitar.jpg" alt="Angel Skars with flying V" loading="lazy"></figure>
+      <figure class="g-tall"><img src="images/guitar-tongue.jpg" alt="Guitarist mid-riff" loading="lazy"></figure>
+      <figure class="g-wide"><img src="images/seated-duo.jpg" alt="Angel Skars seated in fur and leopard" loading="lazy"></figure>
       <figure class="g-sq"><img src="images/guitarist-shades.jpg" alt="Guitarist in shades" loading="lazy"></figure>
       <figure class="g-sq"><img src="images/detail-lighter.jpg" alt="Lighter flame detail" loading="lazy"></figure>
-      <figure class="g-half"><img src="images/duo-throne.jpg" alt="Angel Skars on the throne" loading="lazy"></figure>
-      <figure class="g-half"><img src="images/duo-drumsticks.jpg" alt="Drummer and guitarist" loading="lazy"></figure>
-      <figure class="g-wide"><img src="images/fur-back2back.jpg" alt="Back to back in fur" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/mirror.jpg" alt="Backstage mirror" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/bed-cherub.jpg" alt="Band off duty" loading="lazy"></figure>
+      <figure class="g-wide"><img src="images/bed-play.jpg" alt="Writing in the room" loading="lazy"></figure>
+      <figure class="g-tall"><img src="images/street-full.jpg" alt="Angel Skars on the street at night" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/tattoos.jpg" alt="Traditional ink, up close" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/polaroids.jpg" alt="Polaroids from the night" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/duo-throne.jpg" alt="On the throne" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/case-stand.jpg" alt="Guitar case and fur coat" loading="lazy"></figure>
+      <figure class="g-wide"><img src="images/duo-portrait.jpg" alt="Angel Skars portrait" loading="lazy"></figure>
       <figure class="g-sq"><img src="images/portrait-fire.jpg" alt="Editorial portrait" loading="lazy"></figure>
+      <figure class="g-tall"><img src="images/street-night.jpg" alt="Night street in fur coats" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/bed-guitar.jpg" alt="Flying V on the bed" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/poster.jpg" alt="Hand-made show poster" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/fur-back2back.jpg" alt="Back to back in fur" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -193,11 +213,11 @@
     <div class="reveal"><div class="eyebrow">The lineup</div><h2 class="sec-title">The Band</h2></div>
     <div class="members reveal">
       <div class="member">
-        <img src="images/duo-bleach.jpg" alt="Jax — vocals">
+        <img src="images/drummer-window.jpg" alt="Jax">
         <div class="name"><h3>Jax</h3><p>Vocals / Front</p></div>
       </div>
       <div class="member">
-        <img src="images/guitarist-harley.jpg" alt="Guitar">
+        <img src="images/guitar-profile.jpg" alt="Guitar">
         <div class="name"><h3>The Riff</h3><p>Guitar</p></div>
       </div>
     </div>
@@ -228,7 +248,7 @@
 </section>
 
 <footer>
-  <div class="fmark">ANGEL <span>SKARS</span></div>
+  <img class="fmark-img" src="images/logo-skull.png" alt="Angel Skars">
   <div class="socials">
     <a href="https://instagram.com/angelskars">Instagram</a>
     <a href="https://instagram.com/xjxaxrxexdx">Jax</a>
