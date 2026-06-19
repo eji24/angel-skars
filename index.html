@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANGEL SKARS — NYC Glam-Sleaze Rock</title>
+<meta name="description" content="Angel Skars — glam-sleaze rock out of New York City. Shows, tickets, photos, and the story. Loud, live, and dressed in fur.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;600;700&family=Special+Elite&display=swap');
+  :root{
+    --black:#0a0807;--ink:#120d0c;--bone:#ece4d4;
+    --blood:#b3121f;--blood-bright:#e11d2a;--gold:#caa24a;--grime:#1c1614;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--bone);font-family:'Oswald',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  a{color:inherit;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+    padding:13px 20px;background:linear-gradient(180deg,rgba(10,8,7,.96),transparent);backdrop-filter:blur(3px);}
+  nav .logo{font-family:'Anton';font-size:19px;letter-spacing:1px;text-transform:uppercase;}
+  nav .logo span{color:var(--blood-bright);}
+  nav .links{display:flex;gap:18px;}
+  nav .links a{text-decoration:none;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;opacity:.85;transition:.2s;}
+  nav .links a:hover{color:var(--blood-bright);opacity:1;}
+  @media(max-width:760px){nav .links{display:none;}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+    background:url('images/live-disco.jpg') center 30%/cover no-repeat;}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,7,.4) 0%,rgba(10,8,7,.05) 35%,rgba(10,8,7,.92) 100%);}
+  .hero-inner{position:relative;z-index:2;padding:0 20px 64px;max-width:1100px;margin:0 auto;width:100%;}
+  .hero h1{font-family:'Anton';font-size:clamp(62px,15vw,165px);line-height:.82;text-transform:uppercase;letter-spacing:-1px;text-shadow:0 4px 30px rgba(0,0,0,.7);}
+  .hero h1 .skars{color:var(--blood-bright);display:block;-webkit-text-stroke:1px rgba(236,228,212,.25);}
+  .hero .tagline{margin-top:16px;font-family:'Special Elite',monospace;font-size:clamp(13px,2.4vw,17px);letter-spacing:1px;max-width:540px;line-height:1.5;}
+  .hero .cta-row{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:13px 26px;font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.2s;cursor:pointer;border:1.5px solid var(--blood-bright);}
+  .btn-fill{background:var(--blood-bright);color:#fff;}
+  .btn-fill:hover{background:transparent;color:var(--blood-bright);}
+  .btn-ghost{background:transparent;color:var(--bone);border-color:rgba(236,228,212,.4);}
+  .btn-ghost:hover{border-color:var(--blood-bright);color:var(--blood-bright);}
+
+  section{padding:78px 0;position:relative;}
+  .eyebrow{font-family:'Special Elite',monospace;font-size:12px;letter-spacing:4px;color:var(--blood-bright);text-transform:uppercase;margin-bottom:11px;}
+  .sec-title{font-family:'Anton';font-size:clamp(38px,8vw,74px);text-transform:uppercase;line-height:.9;letter-spacing:-.5px;}
+
+  /* STORY */
+  .story{background:var(--ink);}
+  .story-grid{margin-top:34px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .story-grid img{width:100%;border:1px solid rgba(236,228,212,.12);}
+  .story-copy p{font-size:16px;font-weight:300;line-height:1.7;margin-bottom:16px;opacity:.92;}
+  .story-copy p strong{color:var(--bone);font-weight:600;}
+  @media(max-width:760px){.story-grid{grid-template-columns:1fr;gap:24px;}}
+
+  /* SHOWS */
+  .shows{background:var(--black);}
+  .stub-stack{margin-top:36px;display:flex;flex-direction:column;}
+  .stub{display:grid;grid-template-columns:108px 1fr auto;align-items:center;gap:20px;background:var(--bone);color:var(--black);
+    padding:20px 24px;position:relative;border-bottom:2px dashed rgba(10,8,7,.25);transition:.2s;text-decoration:none;}
+  .stub:hover{transform:translateX(6px);background:#fff;}
+  .stub::before,.stub::after{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:var(--black);top:50%;transform:translateY(-50%);}
+  .stub::before{left:-11px;}.stub::after{right:-11px;}
+  .stub .date{font-family:'Anton';font-size:14px;line-height:1.05;text-transform:uppercase;}
+  .stub .date .day{font-size:28px;display:block;color:var(--blood);}
+  .stub .venue{font-weight:600;font-size:20px;text-transform:uppercase;letter-spacing:.5px;}
+  .stub .venue small{display:block;font-weight:300;font-size:13px;letter-spacing:1px;opacity:.7;text-transform:none;margin-top:2px;}
+  .stub .go{font-family:'Special Elite',monospace;font-size:12px;color:var(--blood);white-space:nowrap;}
+  @media(max-width:600px){.stub{grid-template-columns:74px 1fr;gap:13px;padding:15px 16px;}.stub .go{display:none;}.stub .date .day{font-size:22px;}.stub .venue{font-size:16px;}}
+
+  /* GALLERY */
+  .gallery{background:var(--ink);}
+  .grid{margin-top:34px;display:grid;grid-template-columns:repeat(12,1fr);gap:9px;grid-auto-flow:dense;}
+  .grid figure{overflow:hidden;position:relative;background:var(--grime);}
+  .grid img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.04) saturate(1.04);transition:transform .6s ease;}
+  .grid figure:hover img{transform:scale(1.05);}
+  .g-tall{grid-column:span 4;grid-row:span 2;aspect-ratio:3/4.6;}
+  .g-wide{grid-column:span 8;aspect-ratio:16/10;}
+  .g-sq{grid-column:span 4;aspect-ratio:1;}
+  .g-half{grid-column:span 6;aspect-ratio:4/5;}
+  @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);}.g-tall,.g-sq,.g-half{grid-column:span 1;grid-row:auto;aspect-ratio:3/4;}.g-wide{grid-column:span 2;aspect-ratio:16/11;}}
+
+  /* TEAM */
+  .team{background:var(--black);}
+  .members{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .member{position:relative;overflow:hidden;border:1px solid rgba(236,228,212,.12);aspect-ratio:4/5;}
+  .member img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) grayscale(.1);}
+  .member .name{position:absolute;left:0;right:0;bottom:0;padding:22px 20px 18px;
+    background:linear-gradient(180deg,transparent,rgba(10,8,7,.92));}
+  .member .name h3{font-family:'Anton';font-size:30px;text-transform:uppercase;letter-spacing:.5px;}
+  .member .name p{font-family:'Special Elite',monospace;font-size:12px;letter-spacing:1.5px;color:var(--blood-bright);text-transform:uppercase;margin-top:3px;}
+  @media(max-width:600px){.members{grid-template-columns:1fr;}}
+
+  /* LISTEN */
+  .listen{background:var(--ink);text-align:center;}
+  .listen p{max-width:540px;margin:18px auto 0;font-size:16px;font-weight:300;line-height:1.6;opacity:.88;}
+  .listen .cta-row{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+
+  /* BOOK */
+  .book{background:url('images/fur-back2back.jpg') center 35%/cover no-repeat;position:relative;text-align:center;}
+  .book::before{content:"";position:absolute;inset:0;background:rgba(10,8,7,.82);}
+  .book .wrap{position:relative;z-index:2;}
+  .book p{max-width:480px;margin:18px auto 24px;font-size:16px;font-weight:300;line-height:1.6;}
+  .book .email{font-family:'Anton';font-size:clamp(22px,5vw,40px);color:var(--blood-bright);text-decoration:none;letter-spacing:1px;word-break:break-all;transition:.2s;}
+  .book .email:hover{color:var(--bone);}
+
+  /* LINKS / FOOTER */
+  footer{background:var(--black);padding:54px 20px 44px;text-align:center;border-top:1px solid rgba(236,228,212,.1);}
+  footer .fmark{font-family:'Anton';font-size:36px;text-transform:uppercase;letter-spacing:1px;}
+  footer .fmark span{color:var(--blood-bright);}
+  footer .socials{margin:22px 0;display:flex;gap:22px;justify-content:center;flex-wrap:wrap;}
+  footer .socials a{text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.8;transition:.2s;}
+  footer .socials a:hover{color:var(--blood-bright);opacity:1;}
+  footer .fine{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;opacity:.4;margin-top:12px;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.on{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">ANGEL <span>SKARS</span></div>
+  <div class="links">
+    <a href="#story">Story</a><a href="#shows">Shows</a><a href="#gallery">Gallery</a>
+    <a href="#team">Band</a><a href="#listen">Listen</a><a href="#book">Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>ANGEL<span class="skars">SKARS</span></h1>
+    <p class="tagline">Glam-sleaze rock out of New York City. Fur coats, flying-V guitars, hand-painted banners, and a basement near you. Loud as hell, live as it gets.</p>
+    <div class="cta-row">
+      <a href="#shows" class="btn btn-fill">Upcoming Shows</a>
+      <a href="#listen" class="btn btn-ghost">Hear Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">Who we are</div><h2 class="sec-title">The Story</h2></div>
+    <div class="story-grid reveal">
+      <img src="images/painted-banner.jpg" alt="Hand-painted Angel Skars banner">
+      <div class="story-copy">
+        <p><strong>Angel Skars</strong> came up the way real bands do — in basements and back rooms, on borrowed amps, under a banner painted by hand.</p>
+        <p>Two long-haired degenerates in fur and leather, chasing the sound of a city that never sleeps and never shuts up. Glam on the outside, sleaze underneath.</p>
+        <p>From Arlene's Grocery to the Cobra Club, they've been grinding the downtown rock circuit one sweaty room at a time — building something loud, ugly, and impossible to ignore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWS -->
+<section class="shows" id="shows">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">Catch us live</div><h2 class="sec-title">Shows & Tickets</h2></div>
+    <div class="stub-stack reveal">
+      <a class="stub" href="#book"><div class="date"><span class="day">TBA</span>Summer '26</div><div class="venue">Bridge & Tunnel<small>Brooklyn, NY</small></div><div class="go">DOORS / TICKETS →</div></a>
+      <a class="stub" href="#book"><div class="date"><span class="day">TBA</span>Summer '26</div><div class="venue">Cobra Club<small>Bushwick, Brooklyn</small></div><div class="go">DOORS / TICKETS →</div></a>
+      <a class="stub" href="#book"><div class="date"><span class="day">TBA</span>Summer '26</div><div class="venue">Sugar Mouse<small>New York, NY</small></div><div class="go">DOORS / TICKETS →</div></a>
+    </div>
+    <p style="margin-top:20px;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:1px;opacity:.5;">Dates locking in — follow <a href="https://instagram.com/angelskars" style="color:var(--blood-bright);text-decoration:none;">@angelskars</a> for the drop.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">Flash on, lights low</div><h2 class="sec-title">Gallery</h2></div>
+    <div class="grid reveal">
+      <figure class="g-tall"><img src="images/street-scaffold.jpg" alt="Angel Skars under scaffolding at night" loading="lazy"></figure>
+      <figure class="g-wide"><img src="images/bed-guitar.jpg" alt="Angel Skars with flying V" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/guitarist-shades.jpg" alt="Guitarist in shades" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/detail-lighter.jpg" alt="Lighter flame detail" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/duo-throne.jpg" alt="Angel Skars on the throne" loading="lazy"></figure>
+      <figure class="g-half"><img src="images/duo-drumsticks.jpg" alt="Drummer and guitarist" loading="lazy"></figure>
+      <figure class="g-wide"><img src="images/fur-back2back.jpg" alt="Back to back in fur" loading="lazy"></figure>
+      <figure class="g-sq"><img src="images/portrait-fire.jpg" alt="Editorial portrait" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">The lineup</div><h2 class="sec-title">The Band</h2></div>
+    <div class="members reveal">
+      <div class="member">
+        <img src="images/duo-bleach.jpg" alt="Jax — vocals">
+        <div class="name"><h3>Jax</h3><p>Vocals / Front</p></div>
+      </div>
+      <div class="member">
+        <img src="images/guitarist-harley.jpg" alt="Guitar">
+        <div class="name"><h3>The Riff</h3><p>Guitar</p></div>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:1px;opacity:.5;">Names &amp; roles — swap in the real lineup details anytime.</p>
+  </div>
+</section>
+
+<!-- LISTEN -->
+<section class="listen" id="listen">
+  <div class="wrap reveal">
+    <div class="eyebrow">Turn it up</div><h2 class="sec-title">Listen</h2>
+    <p>Live cuts straight off the stage — including "Morning Sickness," live at Arlene's Grocery. Watch and hear it on the channels.</p>
+    <div class="cta-row">
+      <a href="https://instagram.com/angelskars" class="btn btn-fill">Instagram</a>
+      <a href="https://youtube.com/@angelskars" class="btn btn-ghost">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--blood-bright);">Promoters & venues</div>
+    <h2 class="sec-title">Book Us</h2>
+    <p>Got a room, a bill, or a basement? We'll bring the noise. Reach out direct.</p>
+    <a href="mailto:angelskars@gmail.com" class="email">angelskars@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fmark">ANGEL <span>SKARS</span></div>
+  <div class="socials">
+    <a href="https://instagram.com/angelskars">Instagram</a>
+    <a href="https://instagram.com/xjxaxrxexdx">Jax</a>
+    <a href="https://youtube.com/@angelskars">YouTube</a>
+    <a href="mailto:angelskars@gmail.com">Email</a>
+  </div>
+  <div class="fine">NYC · GLAM-SLEAZE · EST. NOW</div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
